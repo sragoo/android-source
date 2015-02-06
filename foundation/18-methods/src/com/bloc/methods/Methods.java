@@ -37,7 +37,9 @@ public class Methods extends Object {
 		 ************************************************/
 
 		// You are free to modify the return statement
-		return false;
+		original = !original;
+
+		return original;
 	}
 
 	/*
@@ -60,6 +62,11 @@ public class Methods extends Object {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
+		int numbersLength = numbers.length;
+		for (int i = 0; i < numbersLength; i++) {
+			numbers[i] = numbers[i] *-1;
+		}
+		
 	}
 
 
@@ -90,10 +97,31 @@ public class Methods extends Object {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
-
+		boolean [] boolArray = new boolean [someNumbers.length];
+		
+		for (int r = 0; r < someNumbers.length; r++) {
+			if (someNumbers[r] >= floor) {
+				boolArray [r] = true;
+			 } else { 
+				boolArray [r] = false;	
+			}
+		}
+		return boolArray;
 		// You are free to modify the return statement
-		return new boolean [0];
 	}
+
+	/*
+	boolean[] anotherBooleanArray = new boolean[3];
+	int [] arrayOfInts = new int[3]; 
+	arrayOfInts[0] = 1;
+	arrayOfInts[1] = 4;
+	arrayOfInts[2] = 6;
+ 
+	//(1, 4, 6, 4)
+
+	anotherBooleanArray = boolsRule(5, arrayOfInts);
+	// anotherBooleanArray will equal (false, false, true)
+	*/
 
 	/*
 	 * getMinAndMax
@@ -117,9 +145,28 @@ public class Methods extends Object {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
+		
+		int [] minAndMax = new int[2];
+		
+
+		int min = 0;
+		for (int i = 0; i < someNumbers.length; i++) {
+			if (someNumbers [i] < min) {
+				min = someNumbers [0];
+			}
+			
+		}
+		int max = 0;
+		for (int j = 0; j < someNumbers.length; j++) {
+			if (someNumbers [j] > max) {
+			max = someNumbers [1];	
+			}
+			
+		}
 
 		// You are free to modify the return statement
-		return new int[2];
+		return minAndMax;
+		
 	}
 
 
