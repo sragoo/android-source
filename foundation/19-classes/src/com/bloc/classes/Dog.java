@@ -232,28 +232,36 @@ class Dog {
 		mMeals++;
 
 		//increase the dog's weight and insert it into the weight variable
-		mWeight = WEIGHT_GAIN*MIN_WEIGHT;
+		mWeight = WEIGHT_GAIN+mWeight;
 		
 		// check if you can increase the dog's size by checking if the dog is "large"
-		if (mSize == large) {
-			mSize = null;
-			
-		// check if this is a third meal
+
+		if (mSize == "large") {
+		
+		} else if (mMeals < 3){
+			mSize = "tiny";
+		} else if (mMeals % 3 == 0) { // if this is the third meal
 		// if it is
 			// increase the dog's size		
-			} else if (mMeals >= 3 & mSize == tiny) {
-				mSize = small;
-			
-			} else if (mMeals >= 3 & mSize == small) {
-				mSize = average;
+			 if (mSize == "tiny") {
+			 	
+			 	mSize = "small";
 
-			} else if (mMeals >= 3 & mSize == average) {
-				mSize = large;
+			} else if (mSize == "small") {
+				
+				mSize = "average";
 
-			} else if (mSize < tiny) {
-				mSize = null;
+			}else if (mSize == "average") {
+				
+				mSize = "large";
+
+			} else if (mSize == "large") {
+				
+				mSize = "large";
+
 			}
-		}	// if it is
+		}
+	}	// if it is
 			// if it isn't 
 					// do nothing
 		// if it isn't
@@ -280,20 +288,20 @@ class Dog {
 		mPlays++;
 		mWeight = WEIGHT_LOSS*MIN_WEIGHT;
 			
-		if (mSize <= MIN_WEIGHT) {
-			mSize = null;
+		if (mWeight <= MIN_WEIGHT) {
+			mWeight = 0.0f;
 			
 			
-		} else if (mPlays >= 6 & mSize == large) {
-				mSize = average;
+		} else if (mPlays >= 6 & mSize == "large") {
+				mSize = "average";
 			
-		} else if (mPlays >= 6 & mSize == average) {
-				mSize = small;
+		} else if (mPlays >= 6 & mSize == "average") {
+				mSize = "small";
 
-		} else if (mPlays >= 6 & mSize == small) {
-				mSize = tiny;
+		} else if (mPlays >= 6 & mSize == "small") {
+				mSize = "tiny";
 
-		} else if (mSize < tiny) {
+		} else if (mSize == "tiny") {
 				mSize = null;
 		}
 	}
